@@ -7,6 +7,9 @@ import javafx.scene.layout.Pane;
 
 public class LoginScreenController {
 
+	private static String SLOGIN = "tom";
+	private static String SPASS = "sut";
+	
     @FXML
     private Pane loginPane;
 
@@ -19,6 +22,23 @@ public class LoginScreenController {
     @FXML
     void buttonLogin(ActionEvent event) {
     	System.out.println("Login");
+    	//System.out.println(SLOGIN+"\n"+SPASS+"\n"+loginTextField.getText()+"\n"+passTextField.getText());
+    	checkLog();
     }
+
+	private void checkLog() {
+		if(loginTextField.getText().equals(SLOGIN) || passTextField.getText().equals(SPASS)) {
+    		loginSuccessful();
+    	}else loginFailed();
+	}
+
+	private void loginFailed() {
+		System.out.println("logowanie nieudane");
+	}
+
+	private void loginSuccessful() {
+		System.out.println("pomyslnie zalogowany");
+	}
+
 
 }
