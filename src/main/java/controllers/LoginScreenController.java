@@ -48,14 +48,15 @@ public class LoginScreenController {
 
 	public void loginFailed() {
 		System.out.println("logowanie nieudane");
-		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/LoginFailed.fxml"));
+		String path = "/fxml/LoginFailed.fxml";
+		FXMLLoader loader = new FXMLLoader(this.getClass().getResource(path));
 		Pane pane = null;
 		
 		try {
 			pane = loader.load();
 			System.out.println("za³adowano pane");
 		} catch (IOException e) {
-			System.out.println("nie uda³o sie za³adowaæ /fxml/LoginFailed");
+			System.out.println("nie uda³o sie za³adowaæ "+path);
 			e.printStackTrace();
 		}
 		LoginFailedController loginFailedController = loader.getController();
@@ -65,11 +66,19 @@ public class LoginScreenController {
 
 	public void loginSuccessful() {
 		System.out.println("pomyslnie zalogowany");
+		String path = "/fxml/ConversationScreen.fxml";
+		FXMLLoader loader = new FXMLLoader(this.getClass().getResource(path));
+		Pane pane = null;
+		try {
+			pane = loader.load();
+			System.out.println("Za³adowano "+path);
+		} catch (IOException e) {
+			System.out.println("nie uda³o sie za³adowaæ "+path);
+			e.printStackTrace();
+		}
+		mainScreenController.setScreen(pane);
 	}
 	
-	/*
-	 * set main screen
-	 */
     public void setMainScreenController(MainScreenController mainScreenController) {
 		this.mainScreenController = mainScreenController;
 	}
