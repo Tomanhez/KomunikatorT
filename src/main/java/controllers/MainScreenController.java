@@ -18,7 +18,7 @@ public class MainScreenController {
 	}
 	
 	@FXML
-	private void loadMainScreen() {
+	public void loadMainScreen() {
 		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/LoginScreen.fxml"));
 		Pane pane = null;
 		try {
@@ -28,11 +28,13 @@ public class MainScreenController {
 			e.printStackTrace();
 		}
 		LoginScreenController loginController = loader.getController();
-		setMenu(pane);
+		loginController.setMainScreenController(this);
+		setScreen(pane);
 	}
-	//controllers.LoginScreenControllers
-	
-	private void setMenu(Pane pane) {
+	/*
+	 * set screen
+	 */
+	public void setScreen(Pane pane) {
 		mainStackPane.getChildren().clear();
 		mainStackPane.getChildren().add(pane);
 	}

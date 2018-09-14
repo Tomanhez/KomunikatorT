@@ -38,5 +38,6 @@
             <Font size="14.0" />
          </font>
       </Button>
+      <Label fx:id="emptyLoginPass" layoutX="87.0" layoutY="349.0" prefHeight="17.0" prefWidth="212.0" textFill="#da0808" />
    </children>
 </Pane>
