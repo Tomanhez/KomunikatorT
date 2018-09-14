@@ -24,11 +24,15 @@ public class MainScreenController {
 		try {
 			pane = loader.load();
 		} catch (IOException e) {
+			System.out.println("nie uda³o sie za³adowaæ LoginScreen");
 			e.printStackTrace();
 		}
 		LoginScreenController loginController = loader.getController();
-		
-		
+		setMenu(pane);
+	}
+	//controllers.LoginScreenControllers
+	
+	private void setMenu(Pane pane) {
 		mainStackPane.getChildren().clear();
 		mainStackPane.getChildren().add(pane);
 	}
