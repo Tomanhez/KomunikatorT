@@ -2,6 +2,7 @@ package controllers;
 
 import java.util.ArrayList;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
@@ -18,6 +19,7 @@ public class ConversationScreenController {
 
 	@FXML
 	private TextArea writeScreen;
+
 	
 	@FXML
 	public void initialize(){
@@ -42,6 +44,11 @@ public class ConversationScreenController {
 		}
 		writeScreen.clear();
 	}
+	
+    @FXML
+    void clickClose(ActionEvent event) {
+    	Platform.exit();
+    }
 
 
 	public void setMainScreenController(MainScreenController mainScreenController) {
