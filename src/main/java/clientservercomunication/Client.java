@@ -10,6 +10,7 @@ public class Client {
     private Socket clientSocket;
     private PrintWriter out;
     private BufferedReader in;
+    
  
     public void startConnection(String ip, int port) throws UnknownHostException, IOException {
         clientSocket = new Socket(ip, port);

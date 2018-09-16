@@ -1,7 +1,10 @@
 package controllers;
 
+import java.io.IOException;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 
+import clientservercomunication.Client;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,6 +27,13 @@ public class ConversationScreenController {
 	@FXML
 	public void initialize(){
 		readScreen.setEditable(false);
+		Client client = new Client();
+		try {
+			client.startConnection("127.0.0.1",5000);
+			client.sendMessage("posz³o na serwer");
+			client.stopConnection();
+		} catch (UnknownHostException e){System.out.println("Unknovwn host"); e.printStackTrace();} 
+		  catch (IOException e) {System.out.println("ie excepton");e.printStackTrace();}
 	}
 	
 	
