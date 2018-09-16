@@ -2,7 +2,6 @@ package controllers;
 
 import java.io.IOException;
 
-import configuration.Conf;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;

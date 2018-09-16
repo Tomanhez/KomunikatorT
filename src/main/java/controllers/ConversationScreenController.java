@@ -32,8 +32,6 @@ public class ConversationScreenController {
 	void sendMessage(ActionEvent event) {
 		listOfCalls.add(writeScreen.getText()+"\n");
 		readScreen.clear();
-		for(String x:listOfCalls) {
-		}
 		for(int x= 0;x<listOfCalls.size();x++) {
 			if(listOfCalls.size()==0) {
 				readScreen.appendText(listOfCalls.get(0));

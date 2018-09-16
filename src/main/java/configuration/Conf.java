@@ -10,8 +10,8 @@ public class Conf {
 	/*
 	 * width and height scene
 	 */
-	public static int SWIDTH = 400;
-	public static int SHEIGHT = 400;
+	public static int SWIDTH = 600;
+	public static int SHEIGHT = 600;
 	/*
 	 * default login and pass
 	 */
@@ -20,7 +20,7 @@ public class Conf {
 	/*
 	 * load new pass and login from path
 	 */
-	public static String PATHCONF = Conf.class.getResource("/config.txt").toString().trim();//path of the acces file
+	public static String PATHCONF = Conf.class.getResource("/configuration/config.txt").toString().trim();//path of the acces file
 	
 	BufferedReader bufferReader;
 	
@@ -59,7 +59,7 @@ public class Conf {
 		LOGIN = tempLog;
 		PASS = tempPass;
 		
-		System.out.println("1: "+tempLog+" 2: "+tempPass);
+		System.out.println("pobrane login: "+tempLog+" pass: "+tempPass);
 	}
 
 	
