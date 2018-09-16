@@ -2,6 +2,7 @@ package controllers;
 
 import java.io.IOException;
 
+import configuration.Conf;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,9 +12,6 @@ import javafx.scene.layout.Pane;
 
 public class LoginScreenController {
 
-	private static String SLOGIN = "tom";
-	private static String SPASS = "sut";
-	
 	@FXML
 	MainScreenController mainScreenController;
 	
@@ -37,7 +35,7 @@ public class LoginScreenController {
 
 	public void checkLog() {
 		if(loginTextField.getText().length() != 0 | passTextField.getText().length() != 0) {
-			if(loginTextField.getText().equals(SLOGIN) || passTextField.getText().equals(SPASS)) {
+			if(loginTextField.getText().equals(Conf.LOGIN) || passTextField.getText().equals(Conf.PASS)) {
 	    		loginSuccessful();
 	    	}else loginFailed();
 		}else {

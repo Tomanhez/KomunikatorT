@@ -2,6 +2,7 @@ package controllers;
 
 import java.io.IOException;
 
+import configuration.Conf;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
@@ -29,6 +30,7 @@ public class MainScreenController {
 		}
 		LoginScreenController loginController = loader.getController();
 		loginController.setMainScreenController(this);
+		System.out.println("dalej");
 		setScreen(pane);
 	}
 	/*

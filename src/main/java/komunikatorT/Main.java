@@ -1,5 +1,6 @@
 package komunikatorT;
 
+import configuration.Conf;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -8,18 +9,16 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-	public static int FWIDTH = 400;
-	public static int FHEIGHT = 400;
-	
 	public static void main(String[] args) {
 		launch();
 	}
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		new Conf();//load configuration
 		FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/fxml/MainScreen.fxml"));
 		StackPane basicStackPane = loader.load(); 
-		Scene scene = new Scene(basicStackPane,FWIDTH,FHEIGHT);
+		Scene scene = new Scene(basicStackPane,Conf.SWIDTH,Conf.SHEIGHT);
 		primaryStage.setTitle("TKomunikator");
 		primaryStage.setScene(scene);
 		primaryStage.show();
