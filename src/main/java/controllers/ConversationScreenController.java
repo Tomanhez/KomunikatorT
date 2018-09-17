@@ -35,11 +35,10 @@ public class ConversationScreenController {
 	@FXML
 	void sendMessage(ActionEvent event) {
 		//sending
-		listOfCalls.add(writeScreen.getText()+"\n");
+		//listOfCalls.add(writeScreen.getText()+"\n");
 		StaticClient.sendMessage(writeScreen.getText());//client
 		System.out.println("sendMessageOk ok");
-		//listOfCalls = StaticClient.getListFromServer();
-		System.out.println("lista to"+StaticClient.clientB.client.getTalkList());
+		listOfCalls = StaticClient.getListFromServer();
 		
 		//display
 		readScreen.clear();

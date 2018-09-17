@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class ClientBridge {
 	
 	Thread clientThreads;
-	public Client client;
+	Client client;
 	ArrayList<String> talkList;
 	
 	public ArrayList<String> getTalkList() {
@@ -17,6 +17,7 @@ public class ClientBridge {
 	public ClientBridge(){
 		
 		clientThreads = new Thread(client = new Client());
+		talkList = client.getTalkList();
 		System.out.println("try start");
 		clientThreads.start();
 		System.out.println("start ok");

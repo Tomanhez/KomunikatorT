@@ -42,20 +42,8 @@ public class Client implements Runnable {
 	public void sendMessage(String msg) throws IOException {
 		out.println(msg);
 	}
-	public void getMessage() {
-		try {
-			while(in.readLine() != null) {
-			try {
-				talkList.add(in.readLine());
-			} catch (IOException e) {
-				System.out.println("talkList adding impossible");//TODO if lostConnected
-				e.printStackTrace();
-			}
-			}
-		} catch (IOException e) {
-			System.out.println("getMessage crash");
-			e.printStackTrace();
-		}
+	public String getMessage() throws IOException {
+		return in.readLine();
 	}
 
 	public void stopConnection() throws IOException {
@@ -66,6 +54,13 @@ public class Client implements Runnable {
 
 	@Override
 	public void run() {
-		//getMessage();
+		while(true) {
+			try {
+				talkList.add(getMessage()+"\n");
+			} catch (IOException e) {
+				System.out.println("run client - problem");
+				e.printStackTrace();
+			}
+		}
 	}
 }
