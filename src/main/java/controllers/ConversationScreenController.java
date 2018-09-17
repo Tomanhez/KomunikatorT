@@ -5,6 +5,8 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 
 import clientservercomunication.Client;
+import clientservercomunication.ClientBridge;
+import clientservercomunication.StaticClient;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -27,20 +29,19 @@ public class ConversationScreenController {
 	@FXML
 	public void initialize(){
 		readScreen.setEditable(false);
-		Client client = new Client();
-		try {
-			client.startConnection("127.0.0.1",5000);
-			client.sendMessage("posz³o na serwer");
-			client.stopConnection();
-		} catch (UnknownHostException e){System.out.println("Unknovwn host"); e.printStackTrace();} 
-		  catch (IOException e) {System.out.println("ie excepton");e.printStackTrace();}
 	}
-	
 	
 	
 	@FXML
 	void sendMessage(ActionEvent event) {
+		//sending
 		listOfCalls.add(writeScreen.getText()+"\n");
+		StaticClient.sendMessage(writeScreen.getText());//client
+		System.out.println("sendMessageOk ok");
+		//listOfCalls = StaticClient.getListFromServer();
+		System.out.println("lista to"+StaticClient.clientB.client.getTalkList());
+		
+		//display
 		readScreen.clear();
 		for(int x= 0;x<listOfCalls.size();x++) {
 			if(listOfCalls.size()==0) {

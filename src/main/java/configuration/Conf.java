@@ -23,6 +23,11 @@ public class Conf {
 	public static String PATHCONF = Conf.class.getResource("/configuration/config.txt").toString().trim();//path of the acces file
 	
 	BufferedReader bufferReader;
+	/*
+	 * default server initialize
+	 */
+	public static String SERVER_IP = "127.0.0.1";
+	public static int NUMBER_SERVER_PORT = 5000;
 	
 	public Conf() {
 		PATHCONF = PATHCONF.substring(6);
