@@ -10,6 +10,10 @@ public class ClientBridge {
 	Client client;
 	ArrayList<String> talkList;
 	
+	public Thread getClientThreads() {
+		return clientThreads;
+	}
+	
 	public ArrayList<String> getTalkList() {
 		return talkList;
 	}

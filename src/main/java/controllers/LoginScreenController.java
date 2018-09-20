@@ -34,8 +34,8 @@ public class LoginScreenController {
     }
 
 	public void checkLog() {
-		if(loginTextField.getText().length() != 0 | passTextField.getText().length() != 0) {
-			if(loginTextField.getText().equals(Conf.LOGIN) || passTextField.getText().equals(Conf.PASS)) {
+		if(loginTextField.getText().length() != 0 & passTextField.getText().length() != 0) {
+			if(loginTextField.getText().equals(Conf.LOGIN) & passTextField.getText().equals(Conf.PASS)) {
 	    		loginSuccessful();
 	    	}else loginFailed();
 		}else {
@@ -74,6 +74,8 @@ public class LoginScreenController {
 			System.out.println("nie uda³o sie za³adowaæ "+path);
 			e.printStackTrace();
 		}
+		ConversationScreenController conversationScreeenController = loader.getController();
+		conversationScreeenController.setMainScreenController(mainScreenController);
 		mainScreenController.setScreen(pane);
 	}
 	

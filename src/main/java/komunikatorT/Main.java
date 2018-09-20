@@ -17,7 +17,7 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		new Conf();//load configuration
+		//new Conf();//load configuration
 		/*
 		 * Create client
 		 */

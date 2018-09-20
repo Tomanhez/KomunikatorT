@@ -18,4 +18,8 @@ public class StaticClient {
 		return clientB.getTalkList();
 	}
 	
+	public static Thread getClientThreads() {
+		return clientB.getClientThreads();
+	}
+	
 }

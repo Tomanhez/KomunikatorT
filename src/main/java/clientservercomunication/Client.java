@@ -42,6 +42,7 @@ public class Client implements Runnable {
 	public void sendMessage(String msg) throws IOException {
 		out.println(msg);
 	}
+
 	public String getMessage() throws IOException {
 		return in.readLine();
 	}
@@ -56,10 +57,10 @@ public class Client implements Runnable {
 	public void run() {
 		while(true) {
 			try {
-				talkList.add(getMessage()+"\n");
+				talkList.add(getMessage() + "\n");
 			} catch (IOException e) {
 				System.out.println("run client - problem");
-				e.printStackTrace();
+				StaticClient.getClientThreads().destroy();//????
 			}
 		}
 	}

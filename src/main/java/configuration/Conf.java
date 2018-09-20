@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Conf {
+
 	/*
 	 * width and height scene
 	 */
@@ -22,14 +23,14 @@ public class Conf {
 	 */
 	public static String PATHCONF = Conf.class.getResource("/configuration/config.txt").toString().trim();//path of the acces file
 	
-	BufferedReader bufferReader;
+	static BufferedReader bufferReader;
 	/*
 	 * default server initialize
 	 */
 	public static String SERVER_IP = "127.0.0.1";
 	public static int NUMBER_SERVER_PORT = 5000;
 	
-	public Conf() {
+	static {
 		PATHCONF = PATHCONF.substring(6);
 		File path = new File(PATHCONF);
 		FileReader fileReader = null;
@@ -52,7 +53,7 @@ public class Conf {
 	}
 	
 
-	public void startConfig() {
+	public static void startConfig() {
 		String tempLog = "";
 		String tempPass = "";
 		try {
