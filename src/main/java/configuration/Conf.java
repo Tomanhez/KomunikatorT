@@ -6,39 +6,54 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Static class which configure all application's permissions and load file:
+ * config.txt from path: /configuration/config.txt
+ */
 public class Conf {
 
-	/*
-	 * width and height scene
+	/**
+	 * width scene
 	 */
-	public static int SWIDTH = 600;
-	public static int SHEIGHT = 600;
-	/*
-	 * default login and pass
+	public static int SWIDTH = 400;
+	/**
+	 * height scene
+	 */
+	public static int SHEIGHT = 400;
+	// ----- default login and pass initialization----
+	/**
+	 * user's login
 	 */
 	public static String LOGIN = "tom";
-	public static String PASS = "sut";
-	/*
-	 * load new pass and login from path
+	/**
+	 * user's password
 	 */
-	public static String PATHCONF = Conf.class.getResource("/configuration/config.txt").toString().trim();//path of the acces file
-	
+	public static String PASS = "sut";
+	// -----------------------------------------------
+	/**
+	 * after start program,get path: config.txt in PATHCONF
+	 */
+	public static String PATHCONF = Conf.class.getResource("/configuration/config.txt").toString().trim();
+
 	static BufferedReader bufferReader;
-	/*
-	 * default server initialize
+	/**
+	 * default server ip
 	 */
 	public static String SERVER_IP = "127.0.0.1";
+	/**
+	 * default number server port
+	 */
 	public static int NUMBER_SERVER_PORT = 5000;
-	
+
 	static {
 		PATHCONF = PATHCONF.substring(6);
 		File path = new File(PATHCONF);
 		FileReader fileReader = null;
-		
+
 		try {
 			fileReader = new FileReader(path);
 		} catch (FileNotFoundException e) {
-			System.out.println("you can't create fileReader,path: "+path);
+			System.out.println("you can't create fileReader,path: " + path);
 			e.printStackTrace();
 		}
 		bufferReader = new BufferedReader(fileReader);
@@ -51,8 +66,10 @@ public class Conf {
 			e.printStackTrace();
 		}
 	}
-	
 
+	/**
+	 * load new pass and new login from config.txt
+	 */
 	public static void startConfig() {
 		String tempLog = "";
 		String tempPass = "";
@@ -64,10 +81,8 @@ public class Conf {
 		}
 		LOGIN = tempLog;
 		PASS = tempPass;
-		
-		System.out.println("pobrane login: "+tempLog+" pass: "+tempPass);
+
+		System.out.println("pobrane login: " + tempLog + " pass: " + tempPass);
 	}
 
-	
-	
 }

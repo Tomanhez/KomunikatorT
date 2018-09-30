@@ -3,7 +3,9 @@ package clientservercomunication;
 import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
-
+/**
+ * It is a bridge between class Client and class StaticClient
+ */
 public class ClientBridge {
 	
 	Thread clientThreads;

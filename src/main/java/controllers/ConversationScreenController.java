@@ -18,10 +18,15 @@ public class ConversationScreenController {
 	
 	@FXML
 	MainScreenController mainScreenController;
-	
+	/**
+	 *  It is an area which set text from listOfCalls
+	 */
 	@FXML
 	private TextArea readScreen;
 
+	/**
+	 *  It is an area from which we get text and call to readScreen
+	 */
 	@FXML
 	private TextArea writeScreen;
 
@@ -35,7 +40,6 @@ public class ConversationScreenController {
 	@FXML
 	void sendMessage(ActionEvent event) {
 		//sending
-		//listOfCalls.add(writeScreen.getText()+"\n");
 		StaticClient.sendMessage(writeScreen.getText());//client
 		System.out.println("sendMessageOk ok");
 		listOfCalls = StaticClient.getListFromServer();

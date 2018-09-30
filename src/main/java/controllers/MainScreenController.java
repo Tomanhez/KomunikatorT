@@ -9,6 +9,9 @@ import javafx.scene.layout.StackPane;
 
 public class MainScreenController {
 	
+	/**
+	 * mainStackPane is basic StackPane this application 
+	 */
 	@FXML
 	private StackPane mainStackPane;
 	
@@ -32,8 +35,8 @@ public class MainScreenController {
 		System.out.println("dalej");
 		setScreen(pane);
 	}
-	/*
-	 * set screen
+	/**
+	 * set screen is method which set present Pane  
 	 */
 	public void setScreen(Pane pane) {
 		mainStackPane.getChildren().clear();

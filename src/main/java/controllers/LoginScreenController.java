@@ -18,13 +18,13 @@ public class LoginScreenController {
     @FXML
     private Label emptyLoginPass;
 	
-    @FXML
+	@FXML
     private Pane loginPane;
 
     @FXML
     private TextField loginTextField;
 
-    @FXML
+	@FXML
     private TextField passTextField;
 
     @FXML
@@ -82,6 +82,32 @@ public class LoginScreenController {
     public void setMainScreenController(MainScreenController mainScreenController) {
 		this.mainScreenController = mainScreenController;
 	}
+    
+    //Getters and Setters
+    
+    public TextField getLoginTextField() {
+		return loginTextField;
+	}
+
+	public void setLoginTextField(TextField loginTextField) {
+		this.loginTextField = loginTextField;
+	}
+
+	public TextField getPassTextField() {
+		return passTextField;
+	}
+
+	public void setPassTextField(TextField passTextField) {
+		this.passTextField = passTextField;
+	}
+    public Label getEmptyLoginPass() {
+		return emptyLoginPass;
+	}
+
+	public void setEmptyLoginPass(Label emptyLoginPass) {
+		this.emptyLoginPass = emptyLoginPass;
+	}
+
 
 
 }

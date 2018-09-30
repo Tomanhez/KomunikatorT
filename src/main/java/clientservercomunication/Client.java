@@ -9,7 +9,9 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 
 import configuration.Conf;
-
+/**
+ * Class which implements Runnable() and create,configure to connection with server
+ */
 public class Client implements Runnable {
 
 	private Socket clientSocket;
